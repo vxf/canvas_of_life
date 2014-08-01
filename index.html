@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Canvas of Life</title>
+<script type='text/javascript' src='js/canvasLedPanel.js'></script>
+<script type='text/javascript' src='js/gameoflife.js'></script>
+</head>
+
+<body>
+				<canvas id="bannerOfLife" width="940" height="198">You need a modern browser man!</canvas>
+				<script type="text/javascript"><!--
+				window.onload = function() {
+					newLedPanel.init("bannerOfLife", 10, "#6ef", 0.5);
+					gameOfLife.init(newLedPanel.w, newLedPanel.h);
+					setInterval(function () {
+						var ng = gameOfLife.getnextgen();
+						newLedPanel.update(ng);
+					}, 60);
+				};
+				// --></script>
+</body>
+</html>
